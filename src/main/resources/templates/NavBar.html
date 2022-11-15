@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <meta charset="UTF-8">
+<th:block th:fragment="NavBarFragment">
+    <div style="width:1200px; height:146px; margin-left:auto; margin-right:auto;">
+        <div style="width:1200px; height:80px; margin-left:auto; margin-right:auto; ">
+            <div id="header" class="header d-flex align-items-center fixed-top" style="background-color:white; box-shadow: rgba(0,0,0,0.08) 0px 1px 2px;">
+                <div class="container-fluid container-xl d-flex align-items-center justify-content-between;">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="/bootstrap/img/logo.png" alt=""> -->
+                    <nav id="navbar" class="navbar" style="width:387px; height:80px; margin-bottom:63px;">
+                        <a class="nav-link" th:href="@{/main}" style="font-family: 'Do Hyeon', sans-serif; font-weight:bold; width:156px; height:35px; font-size:30px;">TripBoat</a>
+                    </nav>
+                    <nav id="navbar1" class="navbar" style="width:593px; height:80px; margin-bottom:63px; margin-left:300px;">
+                        <input type="text" placeholder="검색어를 입력하세요" style="width:300px; height:40px; border-radius:20px; margin-left:5px; border:1px solid gray; padding:15px;">
+                        <div style="width:140px; height:40px; margin-right:120px; position:relative;">
+                            <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" style="font-family: 'Do Hyeon', sans-serif; font-weight:bold; font-size:18px; position:absolute; margin-left:-30px;">로그인</a>
+                            <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" style="font-family: 'Do Hyeon', sans-serif; font-weight:bold; font-size:18px; position:absolute; margin-left:-30px;">로그아웃</a>
+                            <a class="nav-link" th:href="@{/signup}" style="font-family: 'Do Hyeon', sans-serif; font-weight:bold; font-size:18px; position:absolute; margin-left:40px;" >회원가입</a>
+                        </div>
+                        <div style="width:100px; height:40px; position:absolute; margin-left:485px; background-color:#00ce7c; border-radius:10px; text-align:center;">
+                            <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login_errors}" style="width:100px; height:40px; color:white; font-family: 'Do Hyeon', sans-serif; font-size:20px; font-weight:bold; padding-top:10px; padding-left:27px;">글쓰기</a>
+                            <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/writer}" style="width:100px; height:40px; color:white; font-family: 'Do Hyeon', sans-serif; font-size:20px; font-weight:bold; padding-top:10px; padding-left:27px;">글쓰기</a>
+                        </div>
+                    </nav>
+                    <nav id="navbar2" class="navbar">
+                        <div style="width:1200px; height:66px; margin-top:75px; z-index:1; margin-left:-1250px;">
+                            <a class="nav-link" th:href="@{/main}" style="font-size:20px; font-weight:bold; margin-top:5px; margin-left:-20px; font-family: 'Do Hyeon', sans-serif;">홈</a>
+                            <a class="nav-link" th:href="@{/community}" style="font-size:20px; font-weight:bold; margin-left:18px; margin-top:-50px; font-family: 'Do Hyeon', sans-serif;">커뮤니티</a>
+                            <a href="nav-link" style="font-family: 'Do Hyeon', sans-serif; font-weight:bold; font-size:20px; margin-left:100px; margin-top:-50px;">Q&A</a>
+                        </div>
+                    </nav>
+                    <!-- .navbar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</th:block>
+</body>
+
+</html>

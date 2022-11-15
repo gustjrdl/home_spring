@@ -1,0 +1,28 @@
+<html layout:decorate="~{layout}">
+
+<body>
+<div layout:fragment="content">
+    <div style="display:flex; justify-content:center;">
+        <div style="height:400px; width:500px; border:solid 3px black; margin-top:20%">
+            제목:<h1 th:text="${community.subject}"></h1>
+            내용:<h3 th:text="${community.content}"></h3>
+            지역:<h5 th:text="${community.region}"></h5>
+        </div>
+    </div>
+
+    <form th:action="@{|/comment/create/${community.id}|}" method="post">
+        <textarea name="content" id="content" cols="30" rows="15"></textarea>
+        <input type="submit" value="댓글등록">
+    </form>
+
+    <h5 th:text="|${#lists.size(community.comment)}개의 답변이 있습니다.|"></h5>
+    <div>
+        <ul>
+            <li th:each="comment : ${community.comment}" th:text="${comment.content}"></li>
+        </ul>
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.incheon:focus {
+    font-weight:30px;
+    color:red;
+}
+
+#button {
+  display: block;
+  width: 135px;
+  height: 43px;
+  background: url(button.png) no-repeat top;
+}
